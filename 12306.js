@@ -6,7 +6,7 @@
     function getMyTicket(){
         $.ajax({
             type: "GET",
-            url: "https://kyfw.12306.cn/otn/leftTicket/queryT",
+            url: "https://kyfw.12306.cn/otn/leftTicket/queryC",
             data: "leftTicketDTO.train_date=" + when + "&leftTicketDTO.from_station=" +
             from + "&leftTicketDTO.to_station=" + to + "&purpose_codes=ADULT",
             success: function (data) {
