@@ -1,9 +1,9 @@
-;(function () {
-    var when="2016-10-10",//乘车日期
-    from="WHN",//从
-    to="IOQ",//到
+(function () {
+    var when="2016-12-29",//乘车日期
+    from="IOQ",//从
+    to="WHN",//到
 
-    trainCode=["K1091","G1005","T95","G1001"],//车次 优先顺序 若两或多趟车次同时满足条件，优先选择前面的
+    trainCode=["G1002","G1312","T96","Z24"],//车次 优先顺序 若两或多趟车次同时满足条件，优先选择前面的
     seat={
         //K T Z车次想要的座位类型
         KTZ:["yw_num","yz_num","rw_num"],
@@ -18,7 +18,7 @@
         
         $.ajax({
             type: "GET",
-            url: "https://kyfw.12306.cn/otn/leftTicket/queryC",
+            url: "https://kyfw.12306.cn/otn/leftTicket/queryX",
             data: "leftTicketDTO.train_date=" + when + "&leftTicketDTO.from_station=" +
             from + "&leftTicketDTO.to_station=" + to + "&purpose_codes=ADULT",
             success: function (data) {
@@ -122,4 +122,3 @@
     //getMyTicket()
     var timer_=setInterval(getMyTicket,500);
 })();
-
